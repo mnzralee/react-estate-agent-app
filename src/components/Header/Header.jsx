@@ -7,7 +7,7 @@ function Header() {
     return (
         <header>
             <div className="d-flex justify-content-center align-items-center py-4">
-                <h1 className="header-1">Your Next HOME</h1>
+                <h1 className="header-1">FIND YOUR DREAM HOME</h1>
             </div>
             <SearchBar />
         </header>

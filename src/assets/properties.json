@@ -32,4 +32,85 @@
                 "year":2022
             }
         }
+        ,
+        {
+            "id": "prop3",
+            "type": "House",
+            "bedrooms": 4,
+            "price": 850000,
+            "tenure": "Freehold",
+            "description": "A spacious four bedroom detached house located in a quiet cul-de-sac. The property features a large living room, modern kitchen, dining room, and a conservatory. Upstairs, there are four bedrooms, one with an en-suite, and a family bathroom. The house also benefits from a garage, driveway, and a well-maintained garden.",
+            "location": "Maple Avenue, Orpington BR6",
+            "picture": "images/prop3pic1small.jpg",
+            "url": "properties/prop3.html",
+            "added": {
+                "month": "August",
+                "day": 20,
+                "year": 2022
+            }
+        },
+        {
+            "id": "prop4",
+            "type": "Flat",
+            "bedrooms": 1,
+            "price": 250000,
+            "tenure": "Leasehold",
+            "description": "A modern one bedroom flat situated close to local amenities and transport links. The property comprises an open plan living area with a fitted kitchen, a double bedroom, and a bathroom. Additional features include double glazing, electric heating, and secure entry.",
+            "location": "High Street, Orpington BR6",
+            "picture": "images/prop4pic1small.jpg",
+            "url": "properties/prop4.html",
+            "added": {
+                "month": "July",
+                "day": 15,
+                "year": 2022
+            }
+        },
+        {
+            "id": "prop5",
+            "type": "House",
+            "bedrooms": 5,
+            "price": 1200000,
+            "tenure": "Freehold",
+            "description": "An impressive five bedroom detached house with a large garden and a double garage. The property offers spacious living accommodation with a large living room, dining room, study, and a modern kitchen. Upstairs, there are five bedrooms, two with en-suites, and a family bathroom.",
+            "location": "Oakwood Drive, Orpington BR6",
+            "picture": "images/prop5pic1small.jpg",
+            "url": "properties/prop5.html",
+            "added": {
+                "month": "June",
+                "day": 10,
+                "year": 2022
+            }
+        },
+        {
+            "id": "prop6",
+            "type": "Flat",
+            "bedrooms": 3,
+            "price": 475000,
+            "tenure": "Leasehold",
+            "description": "A well-presented three bedroom flat located in a popular residential area. The property features a spacious living room, a modern kitchen, three double bedrooms, and a family bathroom. Additional benefits include double glazing, gas central heating, and a balcony.",
+            "location": "Station Road, Orpington BR6",
+            "picture": "images/prop6pic1small.jpg",
+            "url": "properties/prop6.html",
+            "added": {
+                "month": "May",
+                "day": 5,
+                "year": 2022
+            }
+        },
+        {
+            "id": "prop7",
+            "type": "House",
+            "bedrooms": 2,
+            "price": 375000,
+            "tenure": "Freehold",
+            "description": "A charming two bedroom terraced house situated in a sought-after location. The property comprises a living room, dining room, fitted kitchen, two bedrooms, and a family bathroom. Outside, there is a rear garden and on-street parking.",
+            "location": "Elm Road, Orpington BR6",
+            "picture": "images/prop7pic1small.jpg",
+            "url": "properties/prop7.html",
+            "added": {
+                "month": "April",
+                "day": 25,
+                "year": 2022
+            }
+        }
 ]}
