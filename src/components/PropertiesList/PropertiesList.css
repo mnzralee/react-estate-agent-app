@@ -1,0 +1,35 @@
+/* src/components/PropertyList.css */
+.property-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-card .card-img-top img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .property-card .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .property-card .card-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .property-card .bi {
+    margin-right: 5px;
+  }
+  
+  .text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
