@@ -101,8 +101,9 @@ const PropertiesList = ({ properties }) => {
     <>
       <h2 className="text-center mt-4 header-2">Properties</h2>
       <div className="d-flex justify-content-end align-items-center m-4 mb-0">
-        <Button className="btn btn-sm" variant="outline-dark" onClick={() => setShowFavorites(!showFavorites)}>
-          <i className={`bi ${showFavorites ? 'bi-star-fill' : 'bi-star'}`} /> {showFavorites ? 'Hide Favorites' : 'Show Favorites'}
+        <Button className="btn btn-sm show-favorites-btn d-flex flex-nowrap gap-1" variant={showFavorites ? "dark" : "outline-dark"} onClick={() => setShowFavorites(!showFavorites)}>
+          <i className={`bi ${showFavorites ? 'bi-star-fill' : 'bi-star'}`} />
+          <span className='d-none d-sm-block'>{showFavorites ? 'Hide Favorites' : 'Show Favorites'}</span>
         </Button>
       </div>
       <div className="row g-5 p-4 pt-0 m-0">{renderProperties()}</div>
