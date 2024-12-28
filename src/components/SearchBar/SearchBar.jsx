@@ -2,6 +2,7 @@ import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { DatePicker, DropdownList, NumberPicker } from 'react-widgets';
+import './SearchBar.css';
 
 const SearchBar = ({ onSearch }) => {
     const [type, setType] = useState("Any");
@@ -27,7 +28,7 @@ const SearchBar = ({ onSearch }) => {
       };
 
     return (
-        <Container className='container-md p-3 text-sm w-75 bg-light border rounded-4 shadow-sm d-flex flex-column justify-content-center align-items-center'>
+        <Container className='search-bar-con container-md p-3 px-4 text-sm w-75 shadow-sm d-flex flex-column justify-content-center align-items-center'>
             <Row className='w-100 gx-4 gy-2 d-flex justify-content-center mt-2'>
                 <Col className='col-12 col-sm-6 col-md-4'>
                     <p className='m-0 text-nowrap'>Type:</p>
@@ -108,7 +109,7 @@ const SearchBar = ({ onSearch }) => {
                     </div>
                 </Col> */}
                 <Col className="d-flex justify-content-center text-nowrap">
-                    <Button className='btn btn-dark mt-4' onClick={handleSearch}>Search</Button>
+                    <Button className='btn btn-dark mt-4 search-btn' onClick={handleSearch}>Search</Button>
                 </Col>
             </Row>
         </Container>
