@@ -21,7 +21,7 @@ const PropertiesList = ({ properties }) => {
   };
 
   const formatPrice = (price) =>
-    new Intl.NumberFormat('en-GB', {
+    new Intl.NumberFormat('en-GB', 
       style: 'currency',
       currency: 'LKR',
       minimumFractionDigits: 0,
