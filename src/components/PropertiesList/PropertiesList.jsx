@@ -10,7 +10,7 @@ const PropertiesList = ({ properties }) => {
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-GB', {
       style: 'currency',
-      currency: 'GBP',
+      currency: 'LKR',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(price);
@@ -25,7 +25,7 @@ const PropertiesList = ({ properties }) => {
   };
 
   return (
-    <div className="row g-4 p-5">
+    <div className="row g-5 p-4 m-0">
       {properties.map((property) => (
         <div className="col-12 col-md-6 col-lg-4" key={property.id}>
           <Card className="h-100 property-card">
@@ -46,20 +46,20 @@ const PropertiesList = ({ properties }) => {
               <Card.Subtitle className="mb-2 text-success fw-bold">
                 {formatPrice(property.price)}
               </Card.Subtitle>
-              <div className="d-flex justify-content-between mb-2">
+              <div className="d-flex justify-content-between mb-2 text-sm text-muted">
                 <span><i className="bi bi-house-door"></i> {property.bedrooms} beds</span>
                 <span><i className="bi bi-key"></i> {property.tenure}</span>
               </div>
-              <Card.Text className="small text-truncate-3">
-                {property.description.replace(/<br>/g, ' ')}
+              <Card.Text className="small text-truncate-3 ">
+                {property.description}
               </Card.Text>
-              <Card.Text className="text-muted small">
+              <Card.Text className="text-muted text-sm">
                 Added on {formatDate(property.added)}
               </Card.Text>
             </Card.Body>
-            <Card.Footer className="bg-white border-top-0">
-              <a href={property.url} className="btn btn-primary w-100">View Details</a>
-            </Card.Footer>
+            {/* <Card.Footer className="bg-white border-top-0">
+              <a href={property.url} className="btn btn-dark w-100">View Details</a>
+            </Card.Footer> */}
           </Card>
         </div>
       ))}

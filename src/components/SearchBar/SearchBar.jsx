@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }) => {
     const [maxPrice, setMaxPrice] = useState(Infinity);
     const [minBedrooms, setMinBedrooms] = useState(0);
     const [maxBedrooms, setMaxBedrooms] = useState(8);
-    const [dateAdded, setDateAdded] = useState(new Date('2000-10-12'));
+    const [dateAdded, setDateAdded] = useState(new Date('2003-10-20'));
     const [postcode, setPostcode] = useState('');
     const [showFav, setShowFav] = useState(false);
 
@@ -51,7 +51,7 @@ const SearchBar = ({ onSearch }) => {
                     <div>
                         <p className='m-0 text-nowrap'>Max Price:</p>
                         <NumberPicker
-                            defaultValue={Infinity}
+                            defaultValue={5000000}
                             min={minPrice}
                             format={{ style: "currency", currency: "LKR" }}
                             onChange={(value) => setMaxPrice(value)}
