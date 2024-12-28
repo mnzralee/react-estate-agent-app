@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import { Card, Badge } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import './PropertiesList.css'; // We'll create this file for custom styles
 
 const PropertiesList = ({ properties }) => {
@@ -24,6 +25,8 @@ const PropertiesList = ({ properties }) => {
     return <p className="text-center mt-4">No properties match your search criteria.</p>;
   }
 
+  
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-GB', {
       style: 'currency',
@@ -47,25 +50,22 @@ const PropertiesList = ({ properties }) => {
         <div className="col-12 col-md-6 col-lg-4" key={property.id}>
           <Card className="h-100 property-card">
             <div className="card-img-top position-relative">
-              <Card.Img
-              variant="top"
-              src={property.picture || "https://via.placeholder.com/300x200?text=No+Image+Available"}
-              alt={`${property.type} in ${property.location}`}
-              className="img-fluid"
-              />
+            <Card.Img
+            variant="top"
+            src={property.picture || "https://via.placeholder.com/300x200?text=No+Image+Available"}
+            alt={`${property.type} in ${property.location}`}
+            className="img-fluid"
+            />
 
               <Badge bg="secondary" className="position-absolute top-0 end-0 m-2">
                 {property.type}
               </Badge>
-
               <button
-                className="btn btn-light btn-sm position-absolute top-0 end-0 m-2 favorite-btn"
+                className="btn btn-sm position-absolute bottom-0 end-0 m-2 favorite-btn d-flex align-items-center justify-content-center"
                 onClick={() => toggleFavorite(property.id)}
-                aria-label={favorites.includes(property.id) ? "Remove from favorites" : "Add to favorites"}
+                aria-label={favorites.includes(property.id) ? 'Remove from favorites' : 'Add to favorites'}
               >
-                {favorites.includes(property.id) ? 
-                ( <HeartFill className="text-danger" /> ) : 
-                ( <Heart />)}
+                <i className={`bi ${favorites.includes(property.id) ? 'bi-heart-fill text-danger' : 'bi-heart'}`}></i>
               </button>
             </div>
             <Card.Body>

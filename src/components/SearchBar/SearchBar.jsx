@@ -98,7 +98,7 @@ const SearchBar = ({ onSearch }) => {
                 </Col>
             </Row>
             <Row>
-                <Col className='d-flex justify-content-center align-items-center'>
+                {/* <Col className='d-flex justify-content-center align-items-center'>
                     <div className="form-check mt-4">
                         <input 
                         className="form-check-input" 
@@ -106,7 +106,7 @@ const SearchBar = ({ onSearch }) => {
                         onChange={(e) => setShowFav(e.target.checked)}/>
                         <label className="form-check-label text-nowrap">Favourites</label>
                     </div>
-                </Col>
+                </Col> */}
                 <Col className="d-flex justify-content-center text-nowrap">
                     <Button className='btn btn-dark mt-4' onClick={handleSearch}>Search</Button>
                 </Col>

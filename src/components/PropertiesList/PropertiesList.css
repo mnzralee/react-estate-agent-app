@@ -1,6 +1,7 @@
 /* src/components/PropertyList.css */
 .property-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
   }
   
 .property-card:hover {
@@ -36,12 +37,24 @@
 
 .favorite-btn {
   transition: transform 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+  padding: 6px 5px 3px 7.5px;
+  backdrop-filter: blur(80px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
 }
 
+
 .favorite-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.5);
+
 }
 
 .favorite-btn:focus {
   box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.5);
+
 }
