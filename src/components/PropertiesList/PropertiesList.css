@@ -62,6 +62,8 @@
 .show-favorites-btn {
   transition: all 0.2s ease-in-out;
   margin-top: -50px;
+  border-radius: 15px;
+  padding: 4px 12px;
 }
 
 .show-favorites-btn:hover {
