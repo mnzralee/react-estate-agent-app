@@ -21,7 +21,7 @@ const PropertiesList = ({ properties }) => {
   };
 
   const formatPrice = (price) =>
-    new Intl.NumberFormat('en-GB', {
+    new Intl.NumberFormat('en-GB', 
       style: 'currency',
       currency: 'LKR',
       minimumFractionDigits: 0,
@@ -47,7 +47,7 @@ const PropertiesList = ({ properties }) => {
     return displayedProperties.map((property) => (
       <div className="col-12 col-md-6 col-lg-4" key={property.id}>
         <Card className="h-100 property-card">
-          
+
           <div className="card-img-top position-relative">
             <Card.Img
               variant="top"
