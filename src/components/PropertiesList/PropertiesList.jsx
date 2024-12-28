@@ -7,11 +7,13 @@ const PropertiesList = ({ properties }) => {
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
 
+  // Load favorites from localStorage on component mount
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
     setFavorites(storedFavorites);
   }, []);
 
+  // Toggle favorite status of a property
   const toggleFavorite = (propertyId) => {
     const newFavorites = favorites.includes(propertyId)
       ? favorites.filter((id) => id !== propertyId)
@@ -20,6 +22,7 @@ const PropertiesList = ({ properties }) => {
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
   };
 
+  // Format price to LKR currency
   const formatPrice = (price) =>
     new Intl.NumberFormat('en-GB', {
       style: 'currency',
@@ -28,6 +31,7 @@ const PropertiesList = ({ properties }) => {
       maximumFractionDigits: 0,
     }).format(price);
 
+  // Format date to a readable string
   const formatDate = (added) =>
     new Date(`${added.month} ${added.day}, ${added.year}`).toLocaleDateString('en-GB', {
       year: 'numeric',
@@ -35,10 +39,12 @@ const PropertiesList = ({ properties }) => {
       day: 'numeric',
     });
 
+  // Filter properties based on favorites
   const displayedProperties = showFavorites
     ? properties.filter((property) => favorites.includes(property.id))
     : properties;
 
+  // Render properties list
   const renderProperties = () => {
     if (displayedProperties.length === 0) {
       return <p className="text-center mt-4">No properties match your search criteria.</p>;
@@ -47,7 +53,6 @@ const PropertiesList = ({ properties }) => {
     return displayedProperties.map((property) => (
       <div className="col-12 col-md-6 col-lg-4" key={property.id}>
         <Card className="h-100 property-card">
-          
           <div className="card-img-top position-relative">
             <Card.Img
               variant="top"
@@ -82,12 +87,11 @@ const PropertiesList = ({ properties }) => {
             <Card.Text className="text-muted text-sm">Added on {formatDate(property.added)}</Card.Text>
           </Card.Body>
 
-          <Card.Footer className="bg-white border-top-0">
+          {/* <Card.Footer className="bg-white border-top-0">
             <a href={property.url} className="btn btn-dark w-100">
               View Details
             </a>
-          </Card.Footer>
-
+          </Card.Footer> */}
         </Card>
       </div>
     ));
@@ -95,12 +99,13 @@ const PropertiesList = ({ properties }) => {
 
   return (
     <>
+      <h2 className="text-center mt-4 header-2">Properties</h2>
       <div className="d-flex justify-content-end align-items-center m-4 mb-0">
         <Button className="btn btn-sm" variant="outline-dark" onClick={() => setShowFavorites(!showFavorites)}>
           <i className={`bi ${showFavorites ? 'bi-star-fill' : 'bi-star'}`} /> {showFavorites ? 'Hide Favorites' : 'Show Favorites'}
         </Button>
       </div>
-      <div className="row g-5 p-4 m-0">{renderProperties()}</div>
+      <div className="row g-5 p-4 pt-0 m-0">{renderProperties()}</div>
     </>
   );
 };

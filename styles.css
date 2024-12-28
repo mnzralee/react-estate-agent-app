@@ -8,6 +8,9 @@
 body{
     background-color: whitesmoke !important;
     font-family: 'Poppins', sans-serif !important;
+    overflow-x: hidden;
+    width: 100%;
+    scroll-behavior: smooth;
 }
 
 .header-1{
@@ -15,6 +18,14 @@ body{
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
+    cursor: default;
+}
+.header-2{
+    font-family: "Aboreto", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    cursor: default;
 }
 
 .text-md{
