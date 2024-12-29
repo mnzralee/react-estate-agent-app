@@ -1,9 +1,13 @@
-.carousel-container{
-    height: 100px;
-    width: 100%;
+
+.floating-home-btn{
+    background: rgba(41, 41, 41, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(150, 150, 150, 0.2);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.carousel{
-    height: 100%;
-    width: 100%;
+.floating-home-btn:hover{
+    background: rgba(35, 35, 35, 0.7);
+    border: 1px solid rgba(150, 150, 150, 0.2);
 }
