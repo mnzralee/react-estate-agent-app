@@ -3,6 +3,7 @@ import { Card, Badge, Button } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './PropertiesList.css'; // Custom styles
 import { Link } from 'react-router-dom';
+import noresult from '/noresult.svg';
 
 const PropertiesList = ({ properties }) => {
   const [favorites, setFavorites] = useState([]);
@@ -48,7 +49,13 @@ const PropertiesList = ({ properties }) => {
   // Render properties list
   const renderProperties = () => {
     if (displayedProperties.length === 0) {
-      return <p className="text-center mt-4">No properties match your search criteria.</p>;
+      return (
+        <div className="d-flex flex-column align-items-center justify-content-center">
+          <img src={noresult} alt="No results found" className="img-fluid" width={'100px'}/>
+          <p className="text-center mt-4 mb-5">No properties match your search criteria.</p>
+        </div>
+      
+      );
     }
 
     return displayedProperties.map((property) => (
