@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Badge, Button } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './PropertiesList.css'; // Custom styles
+import { Link } from 'react-router-dom';
 
 const PropertiesList = ({ properties }) => {
   const [favorites, setFavorites] = useState([]);
@@ -51,7 +52,8 @@ const PropertiesList = ({ properties }) => {
     }
 
     return displayedProperties.map((property) => (
-      <div className="col-12 col-md-6 col-lg-4" key={property.id}>
+      <Link to={`/property/${property.id}`} className="col-12 col-md-6 col-lg-4" key={property.id} style={{textDecoration: 'none'}}>
+      <div key={property.id}>
         <Card className="h-100 property-card">
           <div className="card-img-top position-relative">
             <Card.Img
@@ -94,6 +96,7 @@ const PropertiesList = ({ properties }) => {
           </Card.Footer> */}
         </Card>
       </div>
+      </Link>
     ));
   };
 
