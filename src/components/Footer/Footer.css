@@ -1,41 +1,39 @@
 .footer {
     background-color: black;
     border-top: 1px solid #e9ecef;
-  }
-  
-  .footer h5 {
+}
+
+.footer h5 {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: whitesmoke;
-  }
-  
-  .footer a {
+}
+
+.footer a {
     color: #6c757d;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.8rem;
-  }
-  
-  .footer a:hover {
+}
+
+.footer a:hover {
     color: #ffffff !important;
-  }
-  
-  .footer .list-unstyled li {
+}
+
+.footer .list-unstyled li {
     margin-bottom: 0.5rem;
-  }
-  
-  .footer .list-inline-item:not(:last-child) {
+}
+
+.footer .list-inline-item:not(:last-child) {
     margin-right: 1rem;
-  }
-  
-  .footer .social-icon {
+}
+
+.footer .social-icon {
     width: 1.2rem;
     height: 1.2rem;
-  }
-  
-  .footer .text-muted {
+}
+
+.footer .text-muted {
     color: #6c757d !important;
-  }
-  
-  
+}

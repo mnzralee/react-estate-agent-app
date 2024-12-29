@@ -65,13 +65,19 @@ const PropertiesList = ({ properties }) => {
             <Badge bg="secondary" className="position-absolute top-0 end-0 m-2">
               {property.type}
             </Badge>
+
             <button
               className="btn btn-sm position-absolute bottom-0 end-0 m-2 favorite-btn"
-              onClick={() => toggleFavorite(property.id)}
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default action of the Link
+                e.stopPropagation(); // Stop propagation to the Link
+                toggleFavorite(property.id);
+              }}
               aria-label={favorites.includes(property.id) ? 'Remove from favorites' : 'Add to favorites'}
             >
               <i className={`bi ${favorites.includes(property.id) ? 'bi-heart-fill text-danger' : 'bi-heart'}`}></i>
             </button>
+
           </div>
 
           <Card.Body>
