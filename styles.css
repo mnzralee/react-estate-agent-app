@@ -28,6 +28,11 @@ body{
     cursor: default;
 }
 
+.text-sp{
+    font-family: "Aboreto", serif;
+    font-size: 1rem;
+}
+
 .text-md{
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;

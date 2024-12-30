@@ -74,7 +74,7 @@ const PropertiesList = ({ properties }) => {
             </Badge>
 
             <button
-              className="btn btn-sm position-absolute bottom-0 end-0 m-2 favorite-btn"
+              className={`btn btn-sm position-absolute bottom-0 end-0 m-2 favorite-btn ${favorites.includes(property.id) ? 'faved-btn' : ''}`}
               onClick={(e) => {
                 e.preventDefault(); // Prevent default action of the Link
                 e.stopPropagation(); // Stop propagation to the Link
@@ -82,7 +82,7 @@ const PropertiesList = ({ properties }) => {
               }}
               aria-label={favorites.includes(property.id) ? 'Remove from favorites' : 'Add to favorites'}
             >
-              <i className={`bi ${favorites.includes(property.id) ? 'bi-heart-fill text-danger' : 'bi-heart'}`}></i>
+              <i className={`bi ${favorites.includes(property.id) ? 'bi-heart-fill text-danger' : 'bi-heart text-light'}`}></i>
             </button>
 
           </div>

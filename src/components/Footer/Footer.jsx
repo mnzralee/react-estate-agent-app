@@ -5,9 +5,9 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer mt-auto py-5 text-sm">
+        <footer className="footer mt-5 py-5 text-sm">
             <Container>
-                <Row className="mb-4">
+                <Row className="my-4">
                     <Col md={5} className="mb-3 mb-md-0">
                         <h5 className="mb-3">Dream Home Realty</h5>
                         <p className="mb-0 text-muted text-sm">
