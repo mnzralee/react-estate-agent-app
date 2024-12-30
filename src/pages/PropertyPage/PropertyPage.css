@@ -11,3 +11,7 @@
     background: rgba(35, 35, 35, 0.7);
     border: 1px solid rgba(150, 150, 150, 0.2);
 }
+
+.tab{
+    min-height: 60vh;
+}

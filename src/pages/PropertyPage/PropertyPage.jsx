@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import properties from "../../assets/properties.json";
 import "./PropertyPage.css"; // Custom styles
-import { Carousel, Container, Image, Col, Row } from "react-bootstrap";
+import { Carousel, Container, Image, Col, Row, Tabs, Tab } from "react-bootstrap";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -66,29 +66,49 @@ const PropertyPage = () => {
       </div>
 
       {/* Property Details Section */}
-      <Container className="mt-4 text-sm">
-        <section>
+      <Container className="text-sm" style={{marginTop: "5rem"}}>
           <Row>
-            <Col xs={6}>
-              <h2>{property.location}</h2>
-              <p className="text-muted">{property.description}</p>
-              <div className="d-flex justify-content-between text-muted">
-                <span>{property.bedrooms} Beds</span>
-                <span>{property.tenure}</span>
-                <span>
-                  Added on{" "}
-                  {new Date(
-                    `${property.added.month} ${property.added.day}, ${property.added.year}`
-                  ).toLocaleDateString("en-GB", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </span>
-              </div>
-            </Col>
+            <Tabs
+              defaultActiveKey="desc"
+              transition={true}
+              id="noanim-tab-example"
+              className="mb-3 text-dark "
+              fill
+            >
+              <Tab eventKey="desc" title="Description" className="tab">
+                <Col xs={6} className="mt-4">
+                  <h2>{property.location}</h2>
+                  <p className="text-muted">{property.description}</p>
+                  <div className="d-flex justify-content-left flex-column text-muted">
+                    <span> <i className="bi bi-house me-2"></i> {property.bedrooms} Beds</span> <br />
+                    <span> <i className="bi bi-key me-2"></i> {property.tenure}</span> <br />
+                    <span className="fst-italic">
+                      Added on{" "}
+                      {new Date(
+                        `${property.added.month} ${property.added.day}, ${property.added.year}`
+                      ).toLocaleDateString("en-GB", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                </Col>
+              </Tab>
+
+              <Tab eventKey="plan" title="Floor Plan" className="tab">
+                Tab content for map
+              </Tab>
+
+              <Tab eventKey="map" title="Open Map" className="tab">
+                Tab content for map
+              </Tab>
+              <Tab eventKey="contact" title="Contact Agent" className="tab">
+                Tab content for Contact
+              </Tab>
+            </Tabs>
           </Row>
-        </section>
+          
       </Container>
     </>
   );
