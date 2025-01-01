@@ -14,3 +14,7 @@
     cursor: pointer;
     transition: background 0.3s;
 }
+
+.search-bar-con .form-control{
+    font-size: 0.8rem !important;
+}

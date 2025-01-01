@@ -24,6 +24,12 @@ const PropertiesList = ({ properties }) => {
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
   };
 
+  // Clear all favorites
+  const clearFavorites = () => {
+    setFavorites([]);
+    localStorage.removeItem('favorites');
+  };
+
   // Format price to LKR currency
   const formatPrice = (price) =>
     new Intl.NumberFormat('en-GB', {

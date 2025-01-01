@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import properties from "../../assets/properties.json";
 import "./PropertyPage.css"; // Custom styles
 import { Carousel, Container, Image, Col, Row, Tabs, Tab } from "react-bootstrap";
+import Map from "../../components/Map/Map";
+import { FaBed } from "react-icons/fa6";
+import ContactAgentTab from "../../components/ContactAgent/ContactAgent";
 
 const PropertyPage = () => {
   const { id } = useParams();
   const property = properties.properties.find((property) => property.id === id);
+
+  // Scroll to the top of the page on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!property) {
     return (
@@ -66,22 +74,28 @@ const PropertyPage = () => {
       </div>
 
       {/* Property Details Section */}
-      <Container className="text-sm" style={{marginTop: "5rem"}}>
-          <Row>
-            <Tabs
-              defaultActiveKey="desc"
-              transition={true}
-              id="noanim-tab-example"
-              className="mb-3 text-dark "
-              fill
-            >
-              <Tab eventKey="desc" title="Description" className="tab">
-                <Col xs={6} className="mt-4">
-                  <h2>{property.location}</h2>
-                  <p className="text-muted">{property.description}</p>
-                  <div className="d-flex justify-content-left flex-column text-muted">
-                    <span> <i className="bi bi-house me-2"></i> {property.bedrooms} Beds</span> <br />
-                    <span> <i className="bi bi-key me-2"></i> {property.tenure}</span> <br />
+      <Container className="text-sm container" style={{ marginTop: "2rem" }}>
+        <Row>
+          <Tabs defaultActiveKey="desc" id="property-tabs" className="mb-3" fill>
+            {/* Description Tab */}
+            <Tab eventKey="desc" title="Description">
+              <Row>
+                <Col xs={12} md={6} className="mt-4 px-4">
+                  <h2 className="header-1 my-4">{property.location}</h2>
+                  <p className="text-muted ps-md-3">{property.description}</p>
+                  <div className="d-flex flex-column text-muted gap-3 mt-5 ps-md-3">
+                    <span>
+                      <i className="bi bi-geo-alt me-2"></i> {property.location}
+                    </span>
+                    <span>
+                      <i className="bi bi-house me-2"></i> {property.type}
+                    </span>
+                    <span>
+                      <FaBed className="me-2" /> {property.bedrooms} Beds
+                    </span>
+                    <span>
+                      <i className="bi bi-key me-2"></i> {property.tenure}
+                    </span>
                     <span className="fst-italic">
                       Added on{" "}
                       {new Date(
@@ -94,21 +108,33 @@ const PropertyPage = () => {
                     </span>
                   </div>
                 </Col>
-              </Tab>
+                <Col xs={12} md={6} className="mt-4 px-3 d-flex justify-content-center align-items-center">
+                  <ContactAgentTab />
+                </Col>
+              </Row>
+            </Tab>
 
-              <Tab eventKey="plan" title="Floor Plan" className="tab">
-                Tab content for map
-              </Tab>
+            {/* Floor Plan Tab */}
+            <Tab eventKey="plan" title="Floor Plan">
+              <h2 className="header-1 my-4 mt-4 px-4">{property.location}</h2>
+              <div className="w-100 d-flex justify-content-center align-items-center flex-column">
+                <Image
+                  src="/prop-gallery/prop_flat1_plan.jpg"
+                  className="img-fluid rounded-5 object-fit-cover w-100"
+                  alt="Floor Plan"
+                />
+              </div>
+            </Tab>
 
-              <Tab eventKey="map" title="Open Map" className="tab">
-                Tab content for map
-              </Tab>
-              <Tab eventKey="contact" title="Contact Agent" className="tab">
-                Tab content for Contact
-              </Tab>
-            </Tabs>
-          </Row>
-          
+            {/* Map Tab */}
+            <Tab eventKey="map" title="Open Map" >
+              <div className="map-container mt-4 px-4">
+                <h2 className="header-1">{property.location}</h2>
+                <Map />
+              </div>
+            </Tab>
+          </Tabs>
+        </Row>
       </Container>
     </>
   );
