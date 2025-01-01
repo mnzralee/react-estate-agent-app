@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Container, Form, Button, Toast } from "react-bootstrap";
 
 const ContactAgent = () => {
     const [showToast, setShowToast] = useState(false);
+    const formRef = useRef(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setShowToast(true);
+        formRef.current.reset();
     };
 
     return (
         <Container className="rounded-4 bg-light shadow-sm py-4 px-5 m-2 text-sm">
             <h2 className="mb-4 text-center header-2">Contact Our Agent</h2>
-            <Form onSubmit={handleSubmit}>
+            <Form ref={formRef} onSubmit={handleSubmit}>
                 <Form.Group controlId="formName" className="mb-3">
                     <Form.Label className="text-muted text-sm">Full Name</Form.Label>
                     <Form.Control 
