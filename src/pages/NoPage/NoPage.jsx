@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { FaRegFrownOpen } from 'react-icons/fa';  // 404 icon
 
 import './NoPage.css'; // Assuming you will add styles here
+import Footer from '../../components/Footer/Footer';
 
 const NoPage = () => {
     return (
+        <>
         <div className="no-page">
             <div className="no-page-content">
                 <FaRegFrownOpen className="no-page-icon" />
@@ -16,6 +18,8 @@ const NoPage = () => {
                 </Link>
             </div>
         </div>
+        <Footer />
+        </>
     );
 };
 

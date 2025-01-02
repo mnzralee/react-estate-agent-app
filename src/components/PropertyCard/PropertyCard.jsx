@@ -24,7 +24,7 @@ const PropertyCard = ({ property, toggleFavorite, favorites}) => {
         });
 
     return (
-    <Link to={`/property/${property.id}`} className="col-12 col-md-6 col-lg-4" key={property.id} style={{textDecoration: 'none'}}>
+    <Link to={`/properties/${property.id}`} className="col-12 col-md-6 col-lg-4" key={property.id} style={{textDecoration: 'none'}}>
       <div key={property.id}>
         <Card className="h-100 property-card">
           <div className="card-img-top position-relative">

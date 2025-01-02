@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 import noresult from '/noresult.svg';
 import PropertyCard from '../PropertyCard/PropertyCard';
 import FloatBtn from '../FloatBtn/FloatBtn';
+import propertiesData from '../../assets/properties.json';
 
-const PropertiesList = ({ properties }) => {
+const PropertiesList = ({ properties, location }) => {
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
+  const allProperties = propertiesData.properties;
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -34,7 +36,7 @@ const PropertiesList = ({ properties }) => {
 
   // Filter properties based on favorites
   const displayedProperties = showFavorites
-    ? properties.filter((property) => favorites.includes(property.id))
+    ? allProperties.filter((property) => favorites.includes(property.id))
     : properties;
 
   // Render properties list
@@ -57,7 +59,7 @@ const PropertiesList = ({ properties }) => {
   return (
     <>
       <FloatBtn value="Go Home" toLink="/" />
-      <h2 className="text-center mt-4 header-2">Properties</h2>
+      <h2 className="text-center mt-4 header-2 fs-5">Search results for <br /> <span className='text-md fst-italic opacity-75'>"{location}"</span></h2>
       <div className="d-flex justify-content-end align-items-center m-4 mb-0">
         <Button className="btn btn-sm show-favorites-btn d-flex flex-nowrap rounded-5" variant={showFavorites ? "dark" : "outline-dark"} onClick={() => setShowFavorites(!showFavorites)}>
           <i className={`bi ${showFavorites ? 'bi-star-fill' : 'bi-star'}`} />

@@ -1,16 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import propertiesData from '../../assets/properties.json';
-import PropertyList from '../../components/PropertiesList/PropertiesList'; // Component to display filtered properties
+import PropertyList from '../../components/PropertiesList/PropertiesList';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
-const Home = () => {
+const PropListingPage = () => {
   const { properties } = propertiesData;
   const [filteredProperties, setFilteredProperties] = useState(properties);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const location = searchParams.get('location');
+    if (location && location.trim().toLowerCase !== 'any') {
+      const filtered = properties.filter((property) =>
+        property.location.toLowerCase().includes(location.toLowerCase())
+      );
+      setFilteredProperties(filtered);
+    } else {
+      setFilteredProperties(properties);
+    }
+  }, [searchParams, properties]);
 
   const handleSearch = (criteria) => {
     const filtered = properties.filter((property) => {
       return (
-        (criteria.type === "Any" || property.type === criteria.type) &&
+        (criteria.type === 'Any' || property.type === criteria.type) &&
         property.price >= criteria.minPrice &&
         property.price <= criteria.maxPrice &&
         property.bedrooms >= criteria.minBedrooms &&
@@ -27,11 +42,12 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <>
       <Header onSearch={handleSearch} />
-      <PropertyList properties={filteredProperties} />
-    </div>
+      <PropertyList properties={filteredProperties} location={searchParams.get('location')}/>
+      <Footer />
+    </>
   );
 };
 
-export default Home;
+export default PropListingPage;

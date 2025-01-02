@@ -7,6 +7,7 @@ import Map from "../../components/Map/Map";
 import { FaBed } from "react-icons/fa6";
 import ContactAgentTab from "../../components/ContactAgent/ContactAgent";
 import FloatBtn from "../../components/FloatBtn/FloatBtn";
+import Footer from "../../components/Footer/Footer";
 
 
 const PropertyPage = () => {
@@ -132,6 +133,7 @@ const PropertyPage = () => {
           </Tabs>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };
