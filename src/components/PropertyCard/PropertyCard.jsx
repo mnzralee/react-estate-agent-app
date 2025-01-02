@@ -1,0 +1,81 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Card, Badge } from "react-bootstrap";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './PropertyCard.css'; // Custom styles
+
+const PropertyCard = ({ property, toggleFavorite, favorites}) => {
+
+      // Format price to LKR currency
+      const formatPrice = (price) =>
+        new Intl.NumberFormat('en-GB', {
+          style: 'currency',
+          currency: 'LKR',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(price);
+    
+      // Format date to a readable string
+      const formatDate = (added) =>
+        new Date(`${added.month} ${added.day}, ${added.year}`).toLocaleDateString('en-GB', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
+
+    return (
+    <Link to={`/property/${property.id}`} className="col-12 col-md-6 col-lg-4" key={property.id} style={{textDecoration: 'none'}}>
+      <div key={property.id}>
+        <Card className="h-100 property-card">
+          <div className="card-img-top position-relative">
+            <Card.Img
+              variant="top"
+              src={property.picture || 'https://via.placeholder.com/300x200?text=No+Image+Available'}
+              alt={`${property.type} in ${property.location}`}
+              className="img-fluid"
+            />
+            <Badge bg="secondary" className="position-absolute top-0 end-0 m-2">
+              {property.type}
+            </Badge>
+
+            <button
+              className={`btn btn-sm position-absolute bottom-0 end-0 m-2 favorite-btn ${favorites.includes(property.id) ? 'faved-btn' : ''}`}
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default action of the Link
+                e.stopPropagation(); // Stop propagation to the Link
+                toggleFavorite(property.id);
+              }}
+              aria-label={favorites.includes(property.id) ? 'Remove from favorites' : 'Add to favorites'}
+            >
+              <i className={`bi ${favorites.includes(property.id) ? 'bi-heart-fill text-danger' : 'bi-heart text-light'}`}></i>
+            </button>
+
+          </div>
+
+          <Card.Body>
+            <Card.Title className="mb-2">{property.location}</Card.Title>
+            <Card.Subtitle className="mb-2 text-success fw-bold">{formatPrice(property.price)}</Card.Subtitle>
+            <div className="d-flex justify-content-between mb-2 text-sm text-muted">
+              <span>
+                <i className="bi bi-house-door"></i> {property.bedrooms || 0} beds
+              </span>
+              <span>
+                <i className="bi bi-key"></i> {property.tenure || 'N/A'}
+              </span>
+            </div>
+            <Card.Text className="small text-truncate-3">{property.description || 'No description available.'}</Card.Text>
+            <Card.Text className="text-muted text-sm">Added on {formatDate(property.added)}</Card.Text>
+          </Card.Body>
+
+          {/* <Card.Footer className="bg-white border-top-0">
+            <a href={property.url} className="btn btn-dark w-100">
+              View Details
+            </a>
+          </Card.Footer> */}
+        </Card>
+      </div>
+    </Link>
+    );
+}
+
+export default PropertyCard;
