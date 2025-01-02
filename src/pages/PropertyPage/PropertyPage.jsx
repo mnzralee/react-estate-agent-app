@@ -6,6 +6,8 @@ import { Carousel, Container, Image, Col, Row, Tabs, Tab } from "react-bootstrap
 import Map from "../../components/Map/Map";
 import { FaBed } from "react-icons/fa6";
 import ContactAgentTab from "../../components/ContactAgent/ContactAgent";
+import FloatBtn from "../../components/FloatBtn/FloatBtn";
+
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -33,15 +35,9 @@ const PropertyPage = () => {
       {/* Carousel Section */}
       <div className="carousel-container position-relative">
         {/* Floating Home Button */}
-        <Link
-          to="/"
-          className="floating-home-btn btn rounded-5 position-fixed top-0 start-0 m-4 text-light d-flex justify-content-center align-items-center"
-          style={{ fontSize: "0.8rem", padding: "9.5px 13px 10px 14px" }}
-        >
-          <i className="bi bi-house me-2 fs-6"></i> Home
-        </Link>
+        <FloatBtn value="To Search" toLink="/properties" />
 
-        {/* Carousel */}
+          {/* Carousel */}
         <Carousel fade className="carousel text-dark bg-light py-5" data-bs-theme="dark">
           {property.images && property.images.length > 0 ? (
             property.images.map((image, index) => (

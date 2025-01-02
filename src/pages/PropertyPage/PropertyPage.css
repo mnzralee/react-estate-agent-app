@@ -1,19 +1,5 @@
 
-.floating-home-btn{
-    background: rgba(41, 41, 41, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(150, 150, 150, 0.2);
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-left: 4rem !important;
-    padding-right: 2rem !important;
-    margin-left: -2rem !important;
-}
 
-.floating-home-btn:hover{
-    background: rgba(35, 35, 35, 0.7);
-    border: 1px solid rgba(150, 150, 150, 0.2);
-}
 
 .tab{
     min-height: 60vh;
