@@ -3,6 +3,8 @@ import { Button, Form, Col, Container, Row } from 'react-bootstrap';
 import { RiResetLeftLine } from "react-icons/ri";
 import './SearchBar.css';
 import { useSearchParams } from 'react-router-dom';
+import { FaArrowsAltH } from "react-icons/fa";
+
 
 const SearchBar = ({ onSearch }) => {
     const [searchParams] = useSearchParams();
@@ -66,7 +68,7 @@ const SearchBar = ({ onSearch }) => {
                         <option>Flat</option>
                     </Form.Control>
                 </Col>
-                <Col className='col-12 col-sm-6 col-md-4 d-flex'>
+                <Col className='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center'>
                     <div>
                         <p className='m-0 text-nowrap'>Min Price:</p>
                         <Form.Control
@@ -78,6 +80,7 @@ const SearchBar = ({ onSearch }) => {
                             onChange={(e) => setMinPrice(Number(e.target.value))}
                         />
                     </div>
+                    <FaArrowsAltH className='mx-1 opacity-75' style={{marginTop: '1rem'}} />
                     <div>
                         <p className='m-0 text-nowrap'>Max Price:</p>
                         <Form.Control
@@ -100,6 +103,7 @@ const SearchBar = ({ onSearch }) => {
                             onChange={(e) => setMinBedrooms(Number(e.target.value))}
                         />
                     </div>
+                    <FaArrowsAltH className='mx-1 opacity-75' style={{marginTop: '1rem'}} />
                     <div>
                         <p className='m-0 text-nowrap'>Max Rooms:</p>
                         <Form.Control

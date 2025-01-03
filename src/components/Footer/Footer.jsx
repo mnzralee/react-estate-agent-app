@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="footer mt-5 py-5 text-sm">
             <Container>
                 <Row className="my-4">
-                    <Col md={5} className="mb-3 mb-md-0">
+                    <Col md={5} className="mb-3 mb-md-0 ">
                         <h5 className="mb-3">Dream Home Realty</h5>
                         <p className="mb-0 text-muted text-sm">
                             Finding your perfect home since 1990. We're committed to exceptional service and your real estate success.
@@ -54,6 +54,7 @@ const Footer = () => {
                 </Row>
                 <Row className="align-items-center">
                     <Col md={6} className="text-center text-md-start mb-3 mb-md-0">
+                        <p className="mb-0 text-muted text-sm">Manazir Ali</p>
                         <p className="mb-0 text-muted text-sm">&copy; 2024 Dream Home Realty. All rights reserved.</p>
                     </Col>
                     <Col md={6} className="text-center text-md-end">
