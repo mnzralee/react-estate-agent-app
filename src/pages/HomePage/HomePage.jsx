@@ -4,6 +4,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import './HomePage.css';
 import propertiesData from '../../assets/properties.json';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     const [location, setLocation] = useState('');
@@ -42,7 +43,18 @@ const HomePage = () => {
                     <h1>Dream Home</h1>
                 </div>
                 <Container>
-                    <h1 className="hero-title header-2 pb-4">Find Properties in Your Desired Location</h1>
+                <h1 className="hero-title header-2 pb-4">
+                    Find 
+                    <Link 
+                        to="/properties" 
+                        className="text-decoration-none text-light mx-2 border-bottom border-1 border-light" 
+                        title="Browse all properties"
+                    >
+                        Properties
+                    </Link> 
+                    in Your Desired Location
+                </h1>
+
                     <Form className="search-form" onSubmit={handleSearch}>
                         <div className="search-bar d-flex">
                             <Form.Control

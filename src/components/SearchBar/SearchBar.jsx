@@ -14,7 +14,7 @@ const SearchBar = ({ onSearch }) => {
     const [minBedrooms, setMinBedrooms] = useState(0);
     const [maxBedrooms, setMaxBedrooms] = useState(8);
     const [dateAdded, setDateAdded] = useState(new Date('2003-10-20'));
-    const [postcode, setPostcode] = useState(location || '');
+    const [postcode, setPostcode] = useState('');
 
     const handleSearch = () => {
         onSearch({
@@ -36,7 +36,7 @@ const SearchBar = ({ onSearch }) => {
         setMinBedrooms(0);
         setMaxBedrooms(8);
         setDateAdded(new Date('2003-10-20'));
-        setPostcode(location || '');
+        setPostcode('');
     
         // Trigger search with reset values immediately after state changes
         onSearch({

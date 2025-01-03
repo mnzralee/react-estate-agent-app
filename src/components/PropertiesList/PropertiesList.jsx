@@ -7,6 +7,7 @@ import noresult from '/noresult.svg';
 import PropertyCard from '../PropertyCard/PropertyCard';
 import FloatBtn from '../FloatBtn/FloatBtn';
 import propertiesData from '../../assets/properties.json';
+import { use } from 'react';
 
 const PropertiesList = ({ properties, location }) => {
   const [favorites, setFavorites] = useState([]);
@@ -34,6 +35,7 @@ const PropertiesList = ({ properties, location }) => {
     localStorage.removeItem('favorites');
   };
 
+
   // Filter properties based on favorites
   const displayedProperties = showFavorites
     ? allProperties.filter((property) => favorites.includes(property.id))
@@ -50,8 +52,11 @@ const PropertiesList = ({ properties, location }) => {
       
       );
     }
+    
+    
 
     return displayedProperties.map((property) => (
+      
       <PropertyCard property={property} key={property.id} toggleFavorite={toggleFavorite} favorites={favorites} />
     ));
   };
@@ -59,7 +64,7 @@ const PropertiesList = ({ properties, location }) => {
   return (
     <>
       <FloatBtn value="Go Home" toLink="/" />
-      <h2 className={`text-center mt-4 header-2 fs-5 ${showFavorites ? 'opacity-0' : 'opacity-100'}`} >Search results for <br /> <span className='text-md fst-italic opacity-75'>"{location ? location: 'All Properties'}"</span></h2>
+      <h2 className={`text-center mt-4 header-2 fs-5 ${showFavorites ? 'opacity-0' : 'opacity-100'}`} >Search results for <br /> <span className='text-md fst-italic opacity-75'>"{location ? location: 'All Locations'}"</span></h2>
       <div className="d-flex justify-content-end align-items-center m-4 mb-0">
         <Button className="btn btn-sm show-favorites-btn d-flex flex-nowrap rounded-5" variant={showFavorites ? "dark" : "outline-dark"} onClick={() => setShowFavorites(!showFavorites)}>
           <i className={`bi ${showFavorites ? 'bi-star-fill' : 'bi-star'}`} />

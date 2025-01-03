@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const Map = () => {
+const Map = ({ latitude, longitude }) => {
     // Define map container style
     const containerStyle = {
         width: '100%',
@@ -10,8 +10,8 @@ const Map = () => {
 
     // Define the center of the map (Orpington, UK)
     const center = {
-        lat: 51.3744, // Latitude for Orpington
-        lng: 0.0974,  // Longitude for Orpington
+        lat: latitude, // Latitude for Orpington
+        lng: longitude,  // Longitude for Orpington
     };
 
     return (

@@ -127,7 +127,7 @@ const PropertyPage = () => {
             <Tab eventKey="map" title="Open Map" >
               <div className="map-container mt-4 px-4">
                 <h2 className="header-1">{property.location}</h2>
-                <Map />
+                <Map latitude={property.map.latitude} longitude={property.map.longitude}/>
               </div>
             </Tab>
           </Tabs>

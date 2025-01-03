@@ -21,7 +21,11 @@
                 "/prop-gallery/prop_house1_c.jpeg",
                 "/prop-gallery/prop_house1_d.jpeg",
                 "/prop-gallery/prop_house1_e.jpeg"
-            ]
+            ],
+            "map": {
+                "longitude": 0.0741,
+                "latitude": 51.3861
+            }
         },
 		{
             "id":"prop2",
@@ -44,9 +48,12 @@
                 "/prop-gallery/prop_flat1_c.jpg",
                 "/prop-gallery/prop_flat1_d.jpg",
                 "/prop-gallery/prop_flat1_e.jpg"
-            ]
-        }
-        ,
+            ],
+            "map": {
+                "longitude": 0.0936,
+                "latitude": 51.3753
+            }
+        },
         {
             "id": "prop3",
             "type": "House",
@@ -68,7 +75,11 @@
                 "/prop-gallery/prop_house2_c.jpeg",
                 "/prop-gallery/prop_house2_d.jpeg",
                 "/prop-gallery/prop_house3_e.jpeg"
-            ]
+            ],
+            "map": {
+                "longitude": 0.0942,
+                "latitude": 51.3770
+            }
         },
         {
             "id": "prop4",
@@ -91,7 +102,11 @@
                 "/prop-gallery/prop_flat2_c.jpg",
                 "/prop-gallery/prop_flat2_d.jpg",
                 "/prop-gallery/prop_flat1_e.jpg"
-            ]
+            ],
+            "map": {
+                "longitude": 0.0991,
+                "latitude": 51.3720
+            }
         },
         {
             "id": "prop5",
@@ -114,7 +129,11 @@
                 "/prop-gallery/prop_house3_c.jpeg",
                 "/prop-gallery/prop_house3_d.jpeg",
                 "/prop-gallery/prop_house3_e.jpeg"
-            ]
+            ],
+            "map": {
+                "longitude": 0.1015,
+                "latitude": 51.3747
+            }
         },
         {
             "id": "prop6",
@@ -137,7 +156,11 @@
                 "/prop-gallery/prop_flat3_c.jpg",
                 "/prop-gallery/prop_flat3_d.jpg",
                 "/prop-gallery/prop_flat1_e.jpg"
-            ]
+            ],
+            "map": {
+                "longitude": 0.1022,
+                "latitude": 51.3738
+            }
         },
         {
             "id": "prop7",
@@ -160,6 +183,11 @@
                 "/prop-gallery/prop_house4_c.jpeg",
                 "/prop-gallery/prop_house4_d.jpeg",
                 "/prop-gallery/prop_house4_e.jpeg"
-            ]
+            ],
+            "map": {
+                "longitude": 0.1033,
+                "latitude": 51.3711
+            }
         }
-]}
+    ]
+}
