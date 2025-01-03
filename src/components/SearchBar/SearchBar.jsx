@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { Button, Form, Col, Container, Row } from 'react-bootstrap';
 import { RiResetLeftLine } from "react-icons/ri";
 import './SearchBar.css';
+import { useSearchParams } from 'react-router-dom';
 
 const SearchBar = ({ onSearch }) => {
+    const [searchParams] = useSearchParams();
+    const location = searchParams.get('location');
+
     const [type, setType] = useState("Any");
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(10000000);
     const [minBedrooms, setMinBedrooms] = useState(0);
     const [maxBedrooms, setMaxBedrooms] = useState(8);
     const [dateAdded, setDateAdded] = useState(new Date('2003-10-20'));
-    const [postcode, setPostcode] = useState('');
+    const [postcode, setPostcode] = useState(location || '');
 
     const handleSearch = () => {
         onSearch({
@@ -32,7 +36,7 @@ const SearchBar = ({ onSearch }) => {
         setMinBedrooms(0);
         setMaxBedrooms(8);
         setDateAdded(new Date('2003-10-20'));
-        setPostcode('');
+        setPostcode(location || '');
     
         // Trigger search with reset values immediately after state changes
         onSearch({

@@ -59,7 +59,7 @@ const PropertiesList = ({ properties, location }) => {
   return (
     <>
       <FloatBtn value="Go Home" toLink="/" />
-      <h2 className="text-center mt-4 header-2 fs-5">Search results for <br /> <span className='text-md fst-italic opacity-75'>"{location}"</span></h2>
+      <h2 className={`text-center mt-4 header-2 fs-5 ${showFavorites ? 'opacity-0' : 'opacity-100'}`} >Search results for <br /> <span className='text-md fst-italic opacity-75'>"{location ? location: 'All Properties'}"</span></h2>
       <div className="d-flex justify-content-end align-items-center m-4 mb-0">
         <Button className="btn btn-sm show-favorites-btn d-flex flex-nowrap rounded-5" variant={showFavorites ? "dark" : "outline-dark"} onClick={() => setShowFavorites(!showFavorites)}>
           <i className={`bi ${showFavorites ? 'bi-star-fill' : 'bi-star'}`} />

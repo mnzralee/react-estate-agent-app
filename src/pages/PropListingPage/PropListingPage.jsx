@@ -12,7 +12,7 @@ const PropListingPage = () => {
 
   useEffect(() => {
     const location = searchParams.get('location');
-    if (location && location.trim().toLowerCase !== 'any') {
+    if (location) {
       const filtered = properties.filter((property) =>
         property.location.toLowerCase().includes(location.toLowerCase())
       );
@@ -35,7 +35,7 @@ const PropListingPage = () => {
           new Date(criteria.dateAdded).getMonth(),
           new Date(criteria.dateAdded).getDate()
         ) >= new Date(criteria.dateAdded) &&
-        property.location.includes(criteria.postcode)
+        property.location.toLowerCase().includes(criteria.postcode.toLowerCase())
       );
     });
     setFilteredProperties(filtered);
