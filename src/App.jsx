@@ -8,7 +8,7 @@ import PropListingPage from './pages/PropListingPage/PropListingPage';
 import PropertyPage from './pages/PropertyPage/PropertyPage';
 import NoPage from './pages/NoPage/NoPage';
 import HomePage from './pages/HomePage/HomePage';
-
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
