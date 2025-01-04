@@ -1,9 +1,19 @@
-# Estate Agent Client-side Web Application
+# React Estate Agent
 
 ## Project Overview
-This project represents a comprehensive and responsive Single Page Application (SPA) developed using React.js. The application facilitates the searching and management of real estate properties, allowing users to apply various search criteria, view detailed property information, and curate a personalized list of favorites. The project was designed and implemented to meet the rigorous requirements of the **Advanced Client-Side Web Development (5COSC026W)** module at the **University of Westminster**, emphasizing academic excellence and industry relevance.
+This project represents a comprehensive and responsive Single Page Application (SPA) developed using React.js and Vite. The application facilitates the searching and management of real estate properties, allowing users to apply various search criteria, view detailed property information, and curate a personalized list of favorites. The project was designed and implemented to meet the rigorous requirements of the **Advanced Client-Side Web Development (5COSC026W)** module at the **University of Westminster**, emphasizing academic excellence and industry relevance.
 
-## Features and Functionalities
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [Scripts](#scripts)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
 
 ### Property Search
 - Enables users to filter properties based on:
@@ -53,53 +63,102 @@ This project represents a comprehensive and responsive Single Page Application (
   - Implementation of Content Security Policy (CSP).
   - HTML encoding to prevent injection vulnerabilities.
 
-## Technological Framework
-- **React.js**: Core framework for building modular and reusable UI components.
-- **CSS (Flexbox and Grid)**: Styling and layout for responsiveness and design consistency.
-- **Local Storage**: Persistent client-side data management.
-- **JSON**: Backend-agnostic data format for property storage.
-- **React Tabs**: Structured organization of detailed property information.
+## Installation
 
-## Implementation and Usage
-
-### Prerequisites
-- Node.js and npm installed.
-
-### Installation Process
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/estate-agent-spa.git
-   cd estate-agent-spa
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-4. Access the application in your browser at `http://localhost:3000`.
+    ```sh
+    git clone https://github.com/your-username/react-estate-agent.git
+    cd react-estate-agent
+    ```
 
-### Project Architecture
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
+
+3. Create a `.env` file in the root directory and add your Google Maps API key:
+    ```env
+    VITE_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
+    ```
+
+4. Start the development server:
+    ```sh
+    npm run dev
+    ```
+
+5. Access the application in your browser at `http://localhost:3000`.
+
+## Project Structure
+
 ```
 estate-agent-spa/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── SearchForm.jsx
-│   │   ├── PropertyList.jsx
-│   │   ├── PropertyDetail.jsx
-│   │   ├── FavoritesList.jsx
-│   ├── styles/
-│   │   ├── main.css
-│   │   ├── responsive.css
-│   ├── data/
-│   │   ├── properties.json
-│   ├── App.jsx
-│   ├── index.js
+├── .gitattributes
+├── .gitignore
+├── eslint.config.js
+├── index.html
 ├── package.json
+├── public/
+│   └── prop-gallery/
+├── README.md
+├── src/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets/
+│   │   └── properties.json
+│   ├── components/
+│   │   ├── ContactAgent/
+│   │   │   └── ContactAgent.jsx
+│   │   ├── FloatBtn/
+│   │   │   ├── FloatBtn.css
+│   │   │   └── FloatBtn.jsx
+│   │   ├── Footer/
+│   │   │   ├── Footer.css
+│   │   │   └── Footer.jsx
+│   │   ├── Header/
+│   │   │   ├── Header.css
+│   │   │   └── Header.jsx
+│   │   ├── Map/
+│   │   │   └── Map.jsx
+│   │   ├── PropertiesList/
+│   │   ├── PropertyCard/
+│   │   ├── SearchBar/
+│   ├── index.css
+│   ├── main.jsx
+│   ├── pages/
+│   │   ├── HomePage/
+│   │   │   ├── HomePage.css
+│   │   │   └── HomePage.jsx
+│   │   ├── NoPage/
+│   │   │   ├── NoPage.css
+│   │   │   └── NoPage.jsx
+│   │   ├── PropertyPage/
+│   │   │   ├── PropertyPage.css
+│   │   │   └── PropertyPage.jsx
+│   │   ├── PropListingPage/
+│   │   │   ├── PropListingPage.css
+│   │   │   └── PropListingPage.jsx
+├── styles.css
+├── vite.config.js
 ```
+
+## Dependencies
+
+- `react`: ^19.0.0
+- `vite`: ^6.28.1
+- `react-dom`: ^19.0.0
+- `react-bootstrap`: ^2.10.7
+- `bootstrap`: ^5.3.3
+- `react-router-dom`: ^5.4.0
+- `@react-google-maps/api`: ^2.20.5
+- `eslint`: ^5.8.4
+- `@vercel/analytics`: ^1.4.1
+
+## Scripts
+
+- `dev`: Start the development server
+- `build`: Build the project for production
+- `lint`: Run ESLint
+- `preview`: Preview the production build
 
 ## Analytical Reflection
 
@@ -117,14 +176,14 @@ estate-agent-spa/
 - **Aesthetic Consistency**: A unified design approach aligned with industry best practices.
 - **Security and Reliability**: Incorporation of client-side safeguards and robust coding standards.
 
-## Potential Future Work
-- Incorporate animations for drag-and-drop interactions to enhance user engagement.
-- Expand security measures by implementing runtime data validation.
-- Improve accessibility by integrating ARIA attributes and enhanced keyboard navigation.
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for further details.
 
 ## Acknowledgments
 - Module Leader: **Ebad Majeed**
 - Institution: **University of Westminster, School of Electronics and Computer Science**
-
-## License
-This project is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for further details.
