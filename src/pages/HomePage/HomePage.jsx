@@ -36,7 +36,7 @@ const HomePage = () => {
 
     return (
         <>
-        <div className="home-page">
+        <div className="home-page h-100 w-100">
             {/* Hero Section */}
             <section className="hero-section d-flex justify-content-center align-items-center">
                 <div className="position-absolute top-0 m-5 start-0 hero-title-container">
