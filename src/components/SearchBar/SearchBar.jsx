@@ -118,10 +118,18 @@ const SearchBar = ({ onSearch }) => {
                     <p className='m-0 text-nowrap'>Added after:</p>
                     <Form.Control
                         type="date"
-                        value={dateAdded.toISOString().split('T')[0]}
-                        onChange={(e) => setDateAdded(new Date(e.target.value))}
+                        value={dateAdded ? dateAdded.toISOString().split('T')[0] : ''} // Handle null case
+                        onChange={(e) => {
+                            const newDate = new Date(e.target.value);
+                            if (!isNaN(newDate)) {
+                                setDateAdded(newDate); // Only update if valid
+                            } else {
+                                console.error('Invalid date entered');
+                            }
+                        }}
                     />
                 </Col>
+
                 <Col className='col-12 col-sm-6 col-md-4'>
                     <p className='m-0 text-nowrap'>Postcode:</p>
                     <Form.Control
