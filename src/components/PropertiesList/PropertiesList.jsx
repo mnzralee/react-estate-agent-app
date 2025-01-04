@@ -73,7 +73,7 @@ const PropertiesList = ({ properties, location }) => {
         {showFavorites && (
           <div className="clear-favorites-btn ms-2 position-absolute d-flex" onClick={clearFavorites}>
             <i className="bi bi-trash"></i>
-            <span className='d-none d-sm-block'>Clear Favorites</span>
+            <span >Clear Favorites</span>
           </div>
         )}
       </div>

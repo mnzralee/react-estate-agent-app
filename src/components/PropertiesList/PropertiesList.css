@@ -59,6 +59,26 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .clear-favorites-btn {
+    margin-right: 3rem;
+
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      margin-right: 0rem;
+    }
+    100% {
+      opacity: 1;
+      margin-right: 3rem;
+    }
+  }
+  
+}
+
+
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }

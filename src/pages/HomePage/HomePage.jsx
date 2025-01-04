@@ -42,7 +42,7 @@ const HomePage = () => {
                 <div className="position-absolute top-0 m-5 start-0 hero-title-container">
                     <h1>Dream Home</h1>
                 </div>
-                <Container>
+                <Container className="text-center  px-5">
                 <h1 className="hero-title header-2 pb-4">
                     Find 
                     <Link 
